@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+  </head>
+  <body>
+    <script>
+      //Create an object called calculator that has two properties: num1 and num2, and a method called sum that returns the sum of those numbers using this.
+      function obj(num1, num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.sum = function () {
+          return num1 + num2;
+        };
+      }
+      let calculator = new obj(3, 4);
+      console.log(calculator.sum());
+
+      const school = {
+        students: {
+          student1: { name: "Ali", grades: [90, 85, 92] },
+          student2: { name: "Sara", grades: [88, 79, 95] },
+          student3: { name: "Omar", grades: [70, 80, 65] },
+        },
+      };
+
+      function myfun(school) {
+        for (let i in school.students) {
+          let student = school.students[i];
+          let average =
+            student.grades.reduce((a, b) => a + b) / student.grades.length;
+
+          console.log(`student name : ${student.name}`);
+          console.log(`average grade : ${average}`);
+          console.log("_______________________");
+        }
+      }
+
+      myfun(school);
+    </script>
+  </body>
+</html>

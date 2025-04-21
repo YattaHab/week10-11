@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 04</title>
+</head>
+<body>
+    <script>
+        let counterDiv = document.createElement("div");
+        let text = document.createTextNode("10");
+        counterDiv.className = "counter";
+        counterDiv.appendChild(text);
+        document.body.append(counterDiv);
+
+        let number = 10;
+        let countdown = setInterval(function(){
+            number--;
+            counterDiv.textContent= number;
+            //task1
+            // if (number === 0){
+            //     clearInterval(countdown);
+            // }
+
+            //task2
+            // if (number === 0){
+            //     window.location.href = "https://elzero.org";
+            // }
+
+            //task 3
+            if(number === 5){
+                Window.open("https://elzero.org" , "_blank", "width=800 , height=600");
+            }
+            if (number === 0){
+                clearInterval(countdown);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
